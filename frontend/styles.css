@@ -1,0 +1,65 @@
+body {
+  font-family: Arial, sans-serif;
+  background-image: url('assets/chattskyline.jpg');
+  background-size: cover;
+  background-position: center;
+  margin: 0;
+  padding: 0;
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+form {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+}
+
+label, input, button {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+input, button {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+}
+
+button {
+  background-color: #007BFF;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+footer {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
