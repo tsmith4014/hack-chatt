@@ -9,18 +9,49 @@
   <body>
     <div class="container">
       <div class="header">
-        <h1>Sign Up for the Gig City Data Jam!</h1>
-        <p>Join us for an exciting Hackathon July 26th.</p>
-        <p>Don't miss out signup now and reserve your spot.</p>
+        <img
+          src="assets/CD_Tech_Chattanooga_Logo.jpg"
+          alt="C.D. Tech Logo"
+          class="cdtech-logo"
+        />
+        <h2>Hosted by C.D. Tech</h2>
+        <h1>Sign up for the Gig City Data Jam!</h1>
+        <p>
+          Join C.D. Tech and our dynamic tech networking group for our inaugural
+          hackathon on July 26, 2024.
+        </p>
+        <div class="sponsors">
+          <img
+            src="assets/sponsor1_logo.png"
+            alt="Sponsor 1 Logo"
+            class="sponsor-logo"
+          />
+          <img
+            src="assets/sponsor2_logo.png"
+            alt="Sponsor 2 Logo"
+            class="sponsor-logo"
+          />
+        </div>
       </div>
-      <form id="emailForm">
-        <label for="email">Email:</label>
+      <form id="emailForm" class="signup-form">
+        <label for="email"
+          >Don't miss out — sign up now to reserve your spot!</label
+        >
         <input type="email" id="email" name="email" required />
-        <button type="submit">Sign Up</button>
+        <button type="submit">Register</button>
       </form>
+      <div class="privacy-policy">
+        <p>
+          By registering for this event, you agree to our
+          <a href="privacy-policy.html">Privacy Policy</a>.
+        </p>
+      </div>
     </div>
     <footer>
-      <p>© 2024 Gig City Data Jam. All rights reserved.</p>
+      <p>
+        © 2024 C.D. Tech. All rights reserved. No part of this content may be
+        reproduced without express permission from C.D. Tech.
+      </p>
     </footer>
     <script>
       document
@@ -30,7 +61,7 @@
           const email = document.getElementById("email").value;
           try {
             const response = await fetch(
-              "https://yxonth14v6.execute-api.us-east-1.amazonaws.com/prod/subscribe",
+              "https://wqqnlhny8f.execute-api.us-east-1.amazonaws.com/prod/subscribe",
               {
                 method: "POST",
                 headers: {
@@ -40,10 +71,10 @@
               }
             );
             if (response.ok) {
+              alert(`Registered successfully with email: ${email}`);
               window.location.href = "success.html";
-              alert(`Signed up successfully with email: ${email}`);
             } else {
-              alert("Failed to sign up.");
+              alert("Failed to register.");
             }
           } catch (error) {
             console.error("Error:", error);
