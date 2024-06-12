@@ -1,5 +1,7 @@
 # Hackathon Signup Website
 
+![Hackathon Signup Serverless Architecture](assets/hackathon_signup_serverless_architecture.png)
+
 This project sets up a hackathon signup website using AWS services. Users can enter their email addresses, which are then processed by an AWS Lambda function and stored in an S3 bucket. The frontend is hosted on S3 as a static website.
 
 ## Project Directory Structure
