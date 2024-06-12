@@ -327,6 +327,7 @@ resource "aws_api_gateway_deployment" "api_deployment" {
 1. **Prepare the Lambda Function Deployment Package**:
 
    - Navigate to your `backend` directory and create a zip file of your Lambda function:
+
      ```sh
      cd backend
      zip lambda_function.zip lambda.py
@@ -335,6 +336,7 @@ resource "aws_api_gateway_deployment" "api_deployment" {
 2. **Initialize and Apply Terraform Configuration**:
 
    - Navigate to the `terraform` directory:
+
      ```sh
      cd terraform
      terraform init
@@ -344,13 +346,22 @@ resource "aws_api_gateway_deployment" "api_deployment" {
 3. **Upload `index.html` to S3**:
 
    - Navigate to your `frontend` directory and upload `index.html` to your website bucket:
+
      ```sh
      aws s3 cp index.html s3://hackathon-website-bucket/
      ```
 
-4. **Set Bucket Policy**:
+   - repeat for styles.css, success.html, and privacy-policy.html (This needs to be automated but for now, do it manually)
+   - for the assets folder create an assets folder in the bucket and then upload the assets to the assets folder like this:
+
+     ```sh
+      `aws s3 cp assets s3://hackathon-website-bucket/assets --recursive`
+     ```
+
+4. **Set Bucket Policies**:
 
    - Use the AWS CLI to set the bucket policy for the email storage bucket:
+
      ```sh
      aws s3api put-bucket-policy --bucket hackathon-email-storage --policy '{
        "Version": "2012-10-17",
@@ -375,12 +386,31 @@ resource "aws_api_gateway_deployment" "api_deployment" {
      }'
      ```
 
+   - Use the AWS CLI to set the bucket policy for the website bucket:
+
+     ```sh
+     aws s3api put-bucket-policy --bucket hackathon-website-bucket --policy '{
+       "Version": "2012-10-17",
+       "Statement": [
+         {
+           "Sid": "PublicReadGetObject",
+           "Effect": "Allow",
+           "Principal": "*",
+           "Action": "s3:GetObject",
+           "Resource": "arn:aws:s3:::hackathon-website-bucket/*"
+         }
+       ]
+     }'
+     ```
+
 5. **Update Frontend with API Gateway Endpoint**:
 
    - Retrieve your API Gateway endpoint using the AWS CLI:
+
      ```sh
      aws apigateway get-rest-apis
      ```
+
    - Replace `YOUR_API_GATEWAY_ENDPOINT` in `index.html` with your actual API Gateway endpoint URL.
 
 6. **Testing the Lambda Function**:
