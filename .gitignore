@@ -4,3 +4,6 @@ terraform.tfstate
 terraform.tfstate.backup
 misc-backup
 frontend/emails.txt
+README2.md
+cmds
+

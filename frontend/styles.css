@@ -16,7 +16,10 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  padding: 5px;
+  padding: 0px;
+  max-width: 800px; /* Set a max width */
+  align-items: flex-start; /* Align items to the left */
+  padding-left: 20px; /* Add padding to the left */
 }
 
 .header {
@@ -30,7 +33,6 @@ body {
 
 .cdtech-logo {
   width: 150px;
-  margin-bottom: 10px;
 }
 
 .sponsors {
@@ -49,59 +51,15 @@ body {
   border-radius: 10px;
   width: 100%;
   max-width: 400px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.signup-form label,
-.signup-form input,
-.signup-form button {
-  display: block;
-  width: 100%;
-  margin-bottom: 10px;
-}
-
-.signup-form input,
-.signup-form button {
-  padding: 10px;
-  border-radius: 5px;
-  border: none;
-}
-
-.signup-form input {
-  box-sizing: border-box;
-}
-
-.signup-form button {
-  background-color: #007bff;
-  color: white;
-  cursor: pointer;
-}
-
-.signup-form button:hover {
-  background-color: #0056b3;
 }
 
 .privacy-policy {
   margin-top: 20px;
 }
 
-.privacy-policy h3 {
-  margin-bottom: 10px;
-}
-
-.privacy-policy p {
-  margin: 5px 0;
-}
-
 .privacy-policy a {
-  color: #007bff;
-  text-decoration: none;
-}
-
-.privacy-policy a:hover {
-  text-decoration: underline;
+  color: white; /* Change the link color to white */
+  text-decoration: underline; /* Optional: underline to indicate a link */
 }
 
 footer {
@@ -109,8 +67,6 @@ footer {
   padding: 10px;
   width: 100%;
   text-align: center;
-  position: absolute;
-  bottom: 0;
 }
 
 .redirect-page {

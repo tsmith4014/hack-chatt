@@ -5,22 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hackathon Signup</title>
     <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="container">
-      <div class="header">
+      <div class="header text-left bg-dark text-white p-4 rounded mb-3">
         <img
           src="assets/CD_Tech_Chattanooga_Logo.jpg"
           alt="C.D. Tech Logo"
-          class="cdtech-logo"
+          class="cdtech-logo mb-3"
         />
         <h2>Hosted by C.D. Tech</h2>
         <h1>Sign up for the Gig City Data Jam!</h1>
         <p>
-          Join C.D. Tech and our dynamic tech networking group for our inaugural
-          hackathon on July 26, 2024.
+          Join C.D. Tech and our tech networking group for our inaugural
+          hackathon on July 26.
         </p>
-        <div class="sponsors">
+        <!-- <div class="sponsors">
           <img
             src="assets/sponsor1_logo.png"
             alt="Sponsor 1 Logo"
@@ -31,23 +35,32 @@
             alt="Sponsor 2 Logo"
             class="sponsor-logo"
           />
-        </div>
+        </div> -->
       </div>
-      <form id="emailForm" class="signup-form">
+      <form
+        id="emailForm"
+        class="signup-form bg-dark text-white p-4 rounded mb-3"
+      >
         <label for="email"
-          >Don't miss out — sign up now to reserve your spot!</label
+          >Don't miss out — register to reserve your spot!</label
         >
-        <input type="email" id="email" name="email" required />
-        <button type="submit">Register</button>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          class="form-control mb-3"
+          required
+        />
+        <button type="submit" class="btn btn-primary w-100">Register</button>
       </form>
-      <div class="privacy-policy">
+      <div class="privacy-policy text-white">
         <p>
           By registering for this event, you agree to our
           <a href="privacy-policy.html">Privacy Policy</a>.
         </p>
       </div>
     </div>
-    <footer>
+    <footer class="bg-dark text-white text-center p-3">
       <p>
         © 2024 C.D. Tech. All rights reserved. No part of this content may be
         reproduced without express permission from C.D. Tech.
