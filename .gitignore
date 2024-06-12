@@ -4,7 +4,7 @@ terraform.tfstate
 terraform.tfstate.backup
 misc-backup
 frontend/emails.txt
-README2.md
+READMEextra.md
 cmds
 .DS_Store
 
