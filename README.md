@@ -1,28 +1,39 @@
-# Hackathon Signup Website
-
 ![Hackathon Signup Serverless Architecture](assets/hackathon_signup_serverless_architecture.png)
 
+# Hackathon Signup Website
+
 This project sets up a hackathon signup website using AWS services. Users can enter their email addresses, which are then processed by an AWS Lambda function and stored in an S3 bucket. The frontend is hosted on S3 as a static website.
+
+## Table of Contents
+
+- [Project Directory Structure](#project-directory-structure)
+- [Backend](#backend)
+  - [lambda.py](#lambdapy)
+- [Frontend](#frontend)
+  - [index.html](#indexhtml)
+- [Terraform Configuration](#terraform-configuration)
+  - [variables.tf](#variablestf)
+  - [main.tf](#maintf)
+- [Deployment Steps](#deployment-steps)
+- [Conclusion](#conclusion)
 
 ## Project Directory Structure
 
 ```
-
 HACK-CHATT/
 ├── backend/
-│ ├── lambda.py
-│ ├── lambda_function.zip # This will be created by zipping lambda.py
+│   ├── lambda.py
+│   ├── lambda_function.zip # This will be created by zipping lambda.py
 ├── frontend/
-│ ├── index.html
-│ └── assets/
-│ └── (any additional front-end assets like CSS, JS, images)
+│   ├── index.html
+│   └── assets/
+│       └── (any additional front-end assets like CSS, JS, images)
 ├── terraform/
-│ ├── main.tf
-│ ├── providers.tf
-│ ├── variables.tf
+│   ├── main.tf
+│   ├── providers.tf
+│   ├── variables.tf
 ├── .gitignore
 └── README.md
-
 ```
 
 ## Backend
@@ -74,15 +85,6 @@ def lambda_handler(event, context):
     }
 ```
 
-### Create Deployment Package
-
-Navigate to the `backend` directory and create a zip file of the Lambda function:
-
-```sh
-cd backend
-zip lambda_function.zip lambda.py
-```
-
 ## Frontend
 
 ### `index.html`
@@ -123,6 +125,7 @@ This HTML file contains the form for users to enter their email addresses.
             );
             if (response.ok) {
               alert("Signed up successfully!");
+              window.location.href = "success.html";
             } else {
               alert("Failed to sign up.");
             }
@@ -308,7 +311,9 @@ resource "aws_api_gateway_integration" "lambda_integration" {
 
 resource "aws_lambda_permission" "api_gateway" {
   statement_id  = "AllowAPIGatewayInvoke"
-  action        = "lambda:InvokeFunction"
+  action        =
+
+ "lambda:InvokeFunction"
   function_name = aws_lambda_function.email_signup.function_name
   principal     = "apigateway.amazonaws.com"
   source_arn    = "${aws_api_gateway_rest_api.email_signup_api.execution_arn}/*/*"
@@ -353,11 +358,11 @@ resource "aws_api_gateway_deployment" "api_deployment" {
      aws s3 cp index.html s3://hackathon-website-bucket/
      ```
 
-   - repeat for styles.css, success.html, and privacy-policy.html (This needs to be automated but for now, do it manually)
-   - for the assets folder create an assets folder in the bucket and then upload the assets to the assets folder like this:
+   - Repeat for `styles.css`, `success.html`, and `privacy-policy.html` (this needs to be automated but for now, do it manually).
+   - For the `assets` folder, create an `assets` folder in the bucket and then upload the assets to the `assets` folder like this:
 
      ```sh
-      `aws s3 cp assets s3://hackathon-website-bucket/assets --recursive`
+     aws s3 cp assets s3://hackathon-website-bucket/assets --recursive
      ```
 
 4. **Set Bucket Policies**:
