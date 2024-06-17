@@ -350,7 +350,7 @@ resource "aws_api_gateway_deployment" "api_deployment" {
      terraform apply
      ```
 
-3. **Upload `index.html` to S3**:
+3. **Upload `index.html` to S3 THIS STEP SHOULD BE NEEDED ANYMORE BUT IF THE WEBSITE BUCKET IS MISSING FILES FOLLOW THESE STEPS**:
 
    - Navigate to your `frontend` directory and upload `index.html` to your website bucket:
 
@@ -367,7 +367,7 @@ resource "aws_api_gateway_deployment" "api_deployment" {
 
 4. **Set Bucket Policies**:
 
-   - Use the AWS CLI to set the bucket policy for the email storage bucket:
+   - IF YOU WANT STRICTER CONTROL Use the AWS CLI to set the bucket policy for the email storage bucket HOWEVER do this after you have the base website working:
 
      ```sh
      aws s3api put-bucket-policy --bucket hackathon-email-storage --policy '{
@@ -393,7 +393,7 @@ resource "aws_api_gateway_deployment" "api_deployment" {
      }'
      ```
 
-   - Use the AWS CLI to set the bucket policy for the website bucket:
+   - THIS POLICY IS NEEDED OR THE SITE WILL NOT WORK -> Use the AWS CLI (or set manually in the aws s3 console under premissions -> bucket policy) to set the bucket policy for the website bucket:
 
      ```sh
      aws s3api put-bucket-policy --bucket hackathon-website-bucket --policy '{
@@ -418,9 +418,15 @@ resource "aws_api_gateway_deployment" "api_deployment" {
      aws apigateway get-rest-apis
      ```
 
-   - Replace `YOUR_API_GATEWAY_ENDPOINT` in `index.html` with your actual API Gateway endpoint URL.
+   - Replace `YOUR_API_GATEWAY_ENDPOINT` in `index.html` with your actual API Gateway endpoint URL and then upload to the s3 with the new updated index.html using the aws cli. First cd into the frontend directory and then run the following command:
+
+   ```sh
+   aws s3 cp index.html s3://hackathon-website-bucket/
+   ```
 
 6. **Testing the Lambda Function**:
+
+   - Your site should be hosting live now at the endpoint given by the website s3 bucket. Navigate to the hackathon-website-bucket then click on properties and then click on the http Bucket website endpoint. IF you want to test using the aws lambda console follow the following steps:
 
    - In the AWS Lambda console, create a test event with the following JSON payload:
 
@@ -434,6 +440,6 @@ resource "aws_api_gateway_deployment" "api_deployment" {
 
 ## Conclusion
 
-Following these steps will deploy your hackathon signup website using AWS services. Users can sign up with their email addresses, which will be processed by a Lambda function and stored securely in an S3 bucket. The website is hosted on S3 for a simple, scalable, and cost-effective solution.
+Following these steps will deploy your hackathon signup website using AWS services. Users can sign up with their email addresses, which will be processed by a Lambda function and stored securely in an S3 bucket. The website is hosted on S3 for a simple, scalable, and cost-effective solution. 2 KEY POINTS after the Terrafrom Apply you do still need to follow the steps above to change the index.html file to point to the correct API Gateway endpoint; (the terraform can be adjusted later to do this for you) as well as setting the bucket policy for the website-bucket only, the email bucket doesnt need a policy unless you want to restrict access to it.
 
 ---

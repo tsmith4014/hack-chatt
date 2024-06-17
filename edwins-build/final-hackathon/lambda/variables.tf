@@ -40,3 +40,10 @@ variable "api_gw_rest_api" {
     description = "attaching api gw arn to lambda"
   
 }
+
+
+variable "region" {
+    type = string
+    default = "us-east-1"
+  
+}
