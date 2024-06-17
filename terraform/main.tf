@@ -27,6 +27,48 @@ resource "aws_s3_bucket_public_access_block" "website_bucket_public_access" {
   restrict_public_buckets = false
 }
 
+resource "aws_s3_object" "privacy_policy_html" {
+  bucket       = aws_s3_bucket.website_bucket.id
+  key          = "privacy-policy.html"
+  source       = "/Users/chadthompsonsmith/Desktop/Projects/app_in_dev/hack-chatt/frontend/privacy-policy.html"
+  content_type = "text/html"
+}
+
+resource "aws_s3_object" "styles_css" {
+  bucket       = aws_s3_bucket.website_bucket.id
+  key          = "styles.css"
+  source       = "/Users/chadthompsonsmith/Desktop/Projects/app_in_dev/hack-chatt/frontend/styles.css"
+  content_type = "text/css"
+}
+
+resource "aws_s3_object" "success_html" {
+  bucket       = aws_s3_bucket.website_bucket.id
+  key          = "success.html"
+  source       = "/Users/chadthompsonsmith/Desktop/Projects/app_in_dev/hack-chatt/frontend/success.html"
+  content_type = "text/html"
+}
+
+resource "aws_s3_object" "cd_tech_chattanooga_logo" {
+  bucket       = aws_s3_bucket.website_bucket.id
+  key          = "assets/CD_Tech_Chattanooga_Logo.jpg"
+  source       = "/Users/chadthompsonsmith/Desktop/Projects/app_in_dev/hack-chatt/frontend/assets/CD_Tech_Chattanooga_Logo.jpg"
+  content_type = "image/jpeg"
+}
+
+resource "aws_s3_object" "abstract_chattskyline" {
+  bucket       = aws_s3_bucket.website_bucket.id
+  key          = "assets/abstract_chattskyline.jpg"
+  source       = "/Users/chadthompsonsmith/Desktop/Projects/app_in_dev/hack-chatt/frontend/assets/abstract_chattskyline.jpg"
+  content_type = "image/jpeg"
+}
+
+resource "aws_s3_object" "chattskyline" {
+  bucket       = aws_s3_bucket.website_bucket.id
+  key          = "assets/chattskyline.jpg"
+  source       = "/Users/chadthompsonsmith/Desktop/Projects/app_in_dev/hack-chatt/frontend/assets/chattskyline.jpg"
+  content_type = "image/jpeg"
+}
+
 resource "aws_s3_bucket" "email_storage_bucket" {
   bucket = var.email_storage_bucket_name
 }
