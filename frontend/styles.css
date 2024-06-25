@@ -17,13 +17,43 @@ body {
   justify-content: flex-start;
   align-items: flex-start;
   padding: 0px;
-  max-width: 800px; /* Set a max width */
-  align-items: flex-start; /* Align items to the left */
+  max-width: 1200px; /* Increased max width */
   padding-left: 20px; /* Add padding to the left */
 }
 
 .header {
-  background: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 68, 0.8); 
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 715px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.cdtech-logo {
+  width: 150px;
+  margin: 0 auto; /* Center the logo horizontally */
+}
+
+.navbar {
+  display: flex;
+  justify-content: center; /* Center the logo horizontally */
+  background-color: rgba(0, 0, 68, 0.8); 
+  padding: 10px;
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.header, .info-box, .signup-form, .signup-form-container, .footer {
+  background-color: rgba(0, 0, 68, 0.8); /* Updated background color */
+  color: #ffffff;
+}
+
+.info-box {
   padding: 20px;
   border-radius: 10px;
   margin-bottom: 20px;
@@ -31,26 +61,32 @@ body {
   max-width: 715px;
 }
 
-.cdtech-logo {
-  width: 150px;
-}
-
-.sponsors {
+.signup-section {
   display: flex;
-  gap: 10px;
-  margin-top: 10px;
+  align-items: center;
+  margin-top: 20px;
+  flex-wrap: wrap;
 }
 
-.sponsor-logo {
-  width: 100px;
-}
-
-.signup-form {
-  background: rgba(0, 0, 0, 0.7);
+.signup-form-container {
   padding: 20px;
   border-radius: 10px;
   width: 100%;
   max-width: 400px;
+}
+
+.signup-info {
+  margin-left: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 68, 0.8); 
+  color: white;
+}
+
+.signup-section .separator {
+  margin: 0 20px;
+  color: #fff;
+  font-size: 200px;
 }
 
 .privacy-policy {
@@ -58,7 +94,7 @@ body {
 }
 
 .privacy-policy a {
-  color: white; /* Change the link color to white */
+  color: #ffcc00; /* Change the link color to bright yellow */
   text-decoration: underline; /* Optional: underline to indicate a link */
 }
 
@@ -70,7 +106,7 @@ footer {
 }
 
 .redirect-page {
-  background-image: url('assets/abstract_chattskyline.jpg');
+  background-image: url('assets/chattskyline.jpg');
 }
 
 .redirect-page .container {
@@ -80,5 +116,68 @@ footer {
 }
 
 body:not(.redirect-page) {
-  background-image: url('assets/chattskyline.jpg');
+  background-image: url('assets/abstract_chattskyline.jpg');
+}
+
+.title-box {
+  flex: 1;
+  min-width: 200px;
+}
+
+.date-location-box {
+  flex: 1;
+  text-align: right;
+  background-color: rgba(0, 0, 68, 0.8); 
+  padding: 10px;
+  border-radius: 10px;
+  min-width: 200px;
+}
+
+.highlight-text {
+  color: rgba(255, 87, 34, 1); /* Bright orange color */
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .date-location-box {
+    text-align: left;
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  .signup-section {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .signup-info {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .signup-section .separator {
+    display: none;
+  }
+
+  .navbar {
+    justify-content: center; /* Center the logo horizontally */
+    background-color: rgba(0, 0, 68, 0.8); 
+    padding: 10px;
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+  }
+
+  .navbar .nav-item {
+    margin-right: 0;
+  }
 }
