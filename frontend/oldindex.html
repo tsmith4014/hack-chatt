@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hackathon Signup</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header text-left bg-dark text-white p-4 rounded mb-3">
+        <img
+          src="assets/CD_Tech_Chattanooga_Logo.jpg"
+          alt="C.D. Tech Logo"
+          class="cdtech-logo mb-3"
+        />
+        <h2>Hosted by C.D. Tech</h2>
+        <h1>Sign up for the Gig City Data Jam!</h1>
+        <p>
+          Join C.D. Tech and our tech networking group for our inaugural
+          hackathon on July 26.
+        </p>
+        <!-- <div class="sponsors">
+          <img
+            src="assets/sponsor1_logo.png"
+            alt="Sponsor 1 Logo"
+            class="sponsor-logo"
+          />
+          <img
+            src="assets/sponsor2_logo.png"
+            alt="Sponsor 2 Logo"
+            class="sponsor-logo"
+          />
+        </div> -->
+      </div>
+      <form
+        id="emailForm"
+        class="signup-form bg-dark text-white p-4 rounded mb-3"
+      >
+        <label for="email"
+          >Don't miss out — register to reserve your spot!</label
+        >
+        <input
+          type="email"
+          id="email"
+          name="email"
+          class="form-control mb-3"
+          required
+        />
+        <button type="submit" class="btn btn-primary w-100">Register</button>
+      </form>
+      <div class="privacy-policy text-white">
+        <p>
+          By registering for this event, you agree to our
+          <a href="privacy-policy.html">Privacy Policy</a>.
+        </p>
+      </div>
+    </div>
+    <footer class="bg-dark text-white text-center p-3">
+      <p>
+        © 2024 C.D. Tech. All rights reserved. No part of this content may be
+        reproduced without express permission from C.D. Tech.
+      </p>
+    </footer>
+    <script>
+      document
+        .getElementById("emailForm")
+        .addEventListener("submit", async function (event) {
+          event.preventDefault();
+          const email = document.getElementById("email").value;
+          try {
+            const response = await fetch(
+              "https://w8bl4jfs0h.execute-api.us-east-1.amazonaws.com/prod/subscribe",
+              {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ email }),
+              }
+            );
+            if (response.ok) {
+              alert(`Registered successfully with email: ${email}`);
+              window.location.href = "success.html";
+            } else {
+              alert("Failed to register.");
+            }
+          } catch (error) {
+            console.error("Error:", error);
+            alert("An error occurred.");
+          }
+        });
+    </script>
+  </body>
+</html>

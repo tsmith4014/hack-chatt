@@ -11,56 +11,79 @@
     />
   </head>
   <body>
+    <div class="navbar">
+      <img
+        src="assets/side_by_side_logo.png"
+        alt="C.D. Tech Logo"
+        class="cdtech-logo"
+      />
+    </div>
+
     <div class="container">
-      <div class="header text-left bg-dark text-white p-4 rounded mb-3">
-        <img
-          src="assets/CD_Tech_Chattanooga_Logo.jpg"
-          alt="C.D. Tech Logo"
-          class="cdtech-logo mb-3"
-        />
-        <h2>Hosted by C.D. Tech</h2>
-        <h1>Sign up for the Gig City Data Jam!</h1>
-        <p>
-          Join C.D. Tech and our tech networking group for our inaugural
-          hackathon on July 26.
-        </p>
-        <!-- <div class="sponsors">
-          <img
-            src="assets/sponsor1_logo.png"
-            alt="Sponsor 1 Logo"
-            class="sponsor-logo"
-          />
-          <img
-            src="assets/sponsor2_logo.png"
-            alt="Sponsor 2 Logo"
-            class="sponsor-logo"
-          />
-        </div> -->
+      <div class="header text-left p-4 rounded mb-3">
+        <div class="title-box">
+          <h2>GET READY FOR THE INAUGURAL</h2>
+          <h1 class="highlight-text">Gig City Data Jam!</h1>
+        </div>
+        <div class="date-location-box">
+          <h3>July 26, 2024</h3>
+          <h3>Chattanooga, TN</h3>
+        </div>
       </div>
-      <form
-        id="emailForm"
-        class="signup-form bg-dark text-white p-4 rounded mb-3"
-      >
-        <label for="email"
-          >Don't miss out — register to reserve your spot!</label
-        >
-        <input
-          type="email"
-          id="email"
-          name="email"
-          class="form-control mb-3"
-          required
-        />
-        <button type="submit" class="btn btn-primary w-100">Register</button>
-      </form>
-      <div class="privacy-policy text-white">
+
+      <div class="info-box">
         <p>
-          By registering for this event, you agree to our
-          <a href="privacy-policy.html">Privacy Policy</a>.
+          Presented by <strong>CD Tech</strong>, Chattanooga’s tech networking
+          and mentorship community, this is a hackathon for coders of all kinds.
         </p>
+        <p>
+          At this dynamic, collaborative event, you’ll
+          <strong>challenge yourself</strong> alongside developers of diverse
+          backgrounds, goals, and experience levels. You’ll work with a team to
+          <strong>design, code, build, and test</strong> a software project with
+          real-world relevance.
+        </p>
+        <p>
+          After an <strong>intensive day</strong> of ideating, problem solving,
+          learning, and more, you’ll leave with stronger skills, new
+          connections, and a portfolio project you can be proud of.
+        </p>
+        <p>
+          If you’re looking to expand your skillset, advance your career, make
+          connections, or simply get creative in the Chattanooga coding space,
+          the <strong>Gig City Data Jam</strong> is for you.
+        </p>
+      </div>
+
+      <div class="signup-section">
+        <div class="signup-info highlight-text">
+          <h3>Don't Miss Out!</h3>
+          <p>Register now to save your spot:</p>
+        </div>
+        <div class="signup-form-container">
+          <form id="emailForm" class="signup-form text-white p-4 rounded mb-3">
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="form-control mb-3"
+              required
+              placeholder="your@email.here"
+            />
+            <button type="submit" class="btn btn-warning w-100 highlight-text">
+              Register
+            </button>
+            <div class="privacy-policy text-white mt-2">
+              <p>
+                By registering for this event, you agree to our
+                <a href="privacy-policy.html">Privacy Policy</a>.
+              </p>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
-    <footer class="bg-dark text-white text-center p-3">
+    <footer class="text-white text-center p-3">
       <p>
         © 2024 C.D. Tech. All rights reserved. No part of this content may be
         reproduced without express permission from C.D. Tech.
@@ -87,7 +110,7 @@
               alert(`Registered successfully with email: ${email}`);
               window.location.href = "success.html";
             } else {
-              alert("Failed to register.");
+              alert("Failed to register.`);
             }
           } catch (error) {
             console.error("Error:", error);
