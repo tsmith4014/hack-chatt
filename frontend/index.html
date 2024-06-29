@@ -11,30 +11,34 @@
     />
   </head>
   <body>
-    <div class="navbar">
+    <!-- <div class="navbar">
       <img
         src="assets/side_by_side_logo.png"
         alt="C.D. Tech Logo"
         class="cdtech-logo"
       />
-    </div>
+    </div> -->
 
     <div class="container">
       <div class="header text-left p-4 rounded mb-3">
         <div class="title-box">
           <h2>GET READY FOR THE INAUGURAL</h2>
-          <h1 class="highlight-text">Gig City Data Jam!</h1>
+          <h1 class="highlight-text">
+            Gig City <br />
+            Data Jam!
+          </h1>
         </div>
         <div class="date-location-box">
-          <h3>July 26, 2024</h3>
+          <h3>July 27, 9am - 6pm</h3>
+          <h3>Hosted at the Edney Building - 5th Floor</h3>
           <h3>Chattanooga, TN</h3>
         </div>
       </div>
 
       <div class="info-box">
         <p>
-          Presented by <strong>CD Tech</strong>, Chattanooga’s tech networking
-          and mentorship community, this is a hackathon for coders of all kinds.
+          Presented by <strong>Chattanooga’s</strong>, tech networking and
+          mentorship community, this is a hackathon for coders of all kinds.
         </p>
         <p>
           At this dynamic, collaborative event, you’ll
@@ -58,7 +62,7 @@
       <div class="signup-section">
         <div class="signup-info highlight-text">
           <h3>Don't Miss Out!</h3>
-          <p>Register now to save your spot:</p>
+          <p>Register now to save your spot!!</p>
         </div>
         <div class="signup-form-container">
           <form id="emailForm" class="signup-form text-white p-4 rounded mb-3">
@@ -85,8 +89,8 @@
     </div>
     <footer class="text-white text-center p-3">
       <p>
-        © 2024 C.D. Tech. All rights reserved. No part of this content may be
-        reproduced without express permission from C.D. Tech.
+        © 2024 All rights reserved. No part of this content may be reproduced
+        without express permission.
       </p>
     </footer>
     <script>
@@ -110,7 +114,7 @@
               alert(`Registered successfully with email: ${email}`);
               window.location.href = "success.html";
             } else {
-              alert("Failed to register.`);
+              alert("Failed to register.");
             }
           } catch (error) {
             console.error("Error:", error);
