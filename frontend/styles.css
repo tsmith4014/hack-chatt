@@ -77,10 +77,11 @@ body {
 
 .signup-info {
   margin-left: 20px;
-  padding: 20px;
+  padding:  10px;
   border-radius: 10px;
   background-color: rgba(0, 0, 68, 0.8); 
   color: white;
+  text-align: center;
 }
 
 .signup-section .separator {

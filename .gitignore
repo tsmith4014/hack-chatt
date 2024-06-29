@@ -7,5 +7,7 @@ frontend/emails.txt
 READMEextra.md
 cmds
 .DS_Store
-
+cloudflare/private-key.pem
+cloudflare/origin-cert.pem
+.gitignore
 
