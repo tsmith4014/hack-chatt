@@ -331,112 +331,112 @@ resource "aws_api_gateway_deployment" "api_deployment" {
 
 ## Deployment Steps
 
-1. **Prepare the Lambda Function Deployment Package**:
+1.  **Prepare the Lambda Function Deployment Package**:
 
-   - Navigate to your `backend` directory and create a zip file of your Lambda function:
+    - Navigate to your `backend` directory and create a zip file of your Lambda function:
 
-     ```sh
-     cd backend
-     zip lambda_function.zip lambda.py
-     ```
+      ```sh
+      cd backend
+      zip lambda_function.zip lambda.py
+      ```
 
-2. **Initialize and Apply Terraform Configuration**:
+2.  **Initialize and Apply Terraform Configuration**:
 
-   - Navigate to the `terraform` directory:
+    - Navigate to the `terraform` directory:
 
-     ```sh
-     cd terraform
-     terraform init
-     terraform apply
-     ```
+      ```sh
+      cd terraform
+      terraform init
+      terraform apply
+      ```
 
-3. **Upload `index.html` to S3 THIS STEP SHOULD BE NEEDED ANYMORE BUT IF THE WEBSITE BUCKET IS MISSING FILES FOLLOW THESE STEPS**:
+3.  **Upload `index.html` to S3 THIS STEP SHOULD BE NEEDED ANYMORE BUT IF THE WEBSITE BUCKET IS MISSING FILES FOLLOW THESE STEPS**:
 
-   - Navigate to your `frontend` directory and upload `index.html` to your website bucket:
+    - Navigate to your `frontend` directory and upload `index.html` to your website bucket:
 
-     ```sh
-     aws s3 cp index.html s3://hackathon-website-bucket/
-     ```
+      ```sh
+      aws s3 cp index.html s3://hackathon-website-bucket/
+      ```
 
-   - Repeat for `styles.css`, `success.html`, and `privacy-policy.html` (this needs to be automated but for now, do it manually).
-   - For the `assets` folder, create an `assets` folder in the bucket and then upload the assets to the `assets` folder like this:
+    - Repeat for `styles.css`, `success.html`, and `privacy-policy.html` (this needs to be automated but for now, do it manually).
+    - For the `assets` folder, create an `assets` folder in the bucket and then upload the assets to the `assets` folder like this:
 
-     ```sh
-     aws s3 cp assets s3://hackathon-website-bucket/assets --recursive
-     ```
+      ```sh
+      aws s3 cp assets s3://hackathon-website-bucket/assets --recursive
+      ```
 
-4. **Set Bucket Policies**:
+4.  **Set Bucket Policies**:
 
-   - IF YOU WANT STRICTER CONTROL Use the AWS CLI to set the bucket policy for the email storage bucket HOWEVER do this after you have the base website working:
+    - IF YOU WANT STRICTER CONTROL Use the AWS CLI to set the bucket policy for the email storage bucket HOWEVER do this after you have the base website working:
 
-     ```sh
-     aws s3api put-bucket-policy --bucket hackathon-email-storage --policy '{
-       "Version": "2012-10-17",
-       "Statement": [
-         {
-           "Effect": "Allow",
-           "Principal": {
-             "Service": "lambda.amazonaws.com"
-           },
-           "Action": "s3:PutObject",
-           "Resource": "arn:aws:s3:::hackathon-email-storage/*"
-         },
-         {
-           "Effect": "Allow",
-           "Principal": {
-             "AWS": "arn:aws:iam::your-account-id:role/organizers-role"
-           },
-           "Action": "s3:GetObject",
-           "Resource": "arn:aws:s3:::hackathon-email-storage/*"
-         }
-       ]
-     }'
-     ```
+      ```sh
+      aws s3api put-bucket-policy --bucket hackathon-email-storage --policy '{
+        "Version": "2012-10-17",
+        "Statement": [
+          {
+            "Effect": "Allow",
+            "Principal": {
+              "Service": "lambda.amazonaws.com"
+            },
+            "Action": "s3:PutObject",
+            "Resource": "arn:aws:s3:::hackathon-email-storage/*"
+          },
+          {
+            "Effect": "Allow",
+            "Principal": {
+              "AWS": "arn:aws:iam::your-account-id:role/organizers-role"
+            },
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::hackathon-email-storage/*"
+          }
+        ]
+      }'
+      ```
 
-   - THIS POLICY IS NEEDED OR THE SITE WILL NOT WORK -> Use the AWS CLI (or set manually in the aws s3 console under premissions -> bucket policy) to set the bucket policy for the website bucket:
+    - THIS POLICY IS NEEDED OR THE SITE WILL NOT WORK -> Use the AWS CLI (or set manually in the aws s3 console under premissions -> bucket policy) to set the bucket policy for the website bucket:
 
-     ```sh
-     aws s3api put-bucket-policy --bucket hackathon-website-bucket --policy '{
-       "Version": "2012-10-17",
-       "Statement": [
-         {
-           "Sid": "PublicReadGetObject",
-           "Effect": "Allow",
-           "Principal": "*",
-           "Action": "s3:GetObject",
-           "Resource": "arn:aws:s3:::hackathon-website-bucket/*"
-         }
-       ]
-     }'
-     ```
+           ```sh
+           aws s3api put-bucket-policy --bucket hackathon-website-bucket --policy '{
+             "Version": "2012-10-17",
+             "Statement": [
+               {
+                 "Sid": "PublicReadGetObject",
+                 "Effect": "Allow",
+                 "Principal": "*",
+                 "Action": "s3:GetObject",
+                 "Resource": "arn:aws:s3:::hackathon-website-bucket/*"
+               }
+             ]
+           }'
+           ```
 
-5. **Update Frontend with API Gateway Endpoint**:
+5.  **Update Frontend with API Gateway Endpoint**:
 
-   - Retrieve your API Gateway endpoint using the AWS CLI:
+    - Retrieve your API Gateway endpoint using the AWS CLI:
 
-     ```sh
-     aws apigateway get-rest-apis
-     ```
+      ```sh
+      aws apigateway get-rest-apis
+      ```
 
-   - Replace `YOUR_API_GATEWAY_ENDPOINT` in `index.html` with your actual API Gateway endpoint URL and then upload to the s3 with the new updated index.html using the aws cli. First cd into the frontend directory and then run the following command:
+    - Replace `YOUR_API_GATEWAY_ENDPOINT` in `index.html` with your actual API Gateway endpoint URL and then upload to the s3 with the new updated index.html using the aws cli. First cd into the frontend directory and then run the following command:
 
-   ```sh
-   aws s3 cp index.html s3://hackathon-website-bucket/
-   ```
+    ```sh
+    aws s3 cp index.html s3://hackathon-website-bucket/
+    ```
 
-6. **Testing the Lambda Function**:
+6.  **Testing the Lambda Function**:
 
-   - Your site should be hosting live now at the endpoint given by the website s3 bucket. Navigate to the hackathon-website-bucket then click on properties and then click on the http Bucket website endpoint. IF you want to test using the aws lambda console follow the following steps:
+    - Your site should be hosting live now at the endpoint given by the website s3 bucket. Navigate to the hackathon-website-bucket then click on properties and then click on the http Bucket website endpoint. IF you want to test using the aws lambda console follow the following steps:
 
-   - In the AWS Lambda console, create a test event with the following JSON payload:
+    - In the AWS Lambda console, create a test event with the following JSON payload:
 
-     ```json
-     {
-       "body": "{\"email\":\"test@example.com\"}"
-     }
-     ```
+      ```json
+      {
+        "body": "{\"email\":\"test@example.com\"}"
+      }
+      ```
 
-   - Execute the test and verify that the email is stored in the S3 bucket.
+    - Execute the test and verify that the email is stored in the S3 bucket.
 
 ## Conclusion
 

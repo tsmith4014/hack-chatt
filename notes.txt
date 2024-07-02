@@ -1,0 +1,9 @@
+new lambda function to update a json, and not a list.  use logic to match email and update the json object if exsist and add if not.  return the updated json object.
+
+
+2 options we may need a second lambda we may be able to fold the logic...need to test update in s3.
+
+We need to also include some error handling and verification the object is in the correct format.
+
+
+3rd party api email validation.
