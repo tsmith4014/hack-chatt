@@ -10,4 +10,4 @@ cmds
 cloudflare/private-key.pem
 cloudflare/origin-cert.pem
 .gitignore
-
+notes.txt

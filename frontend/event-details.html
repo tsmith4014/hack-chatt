@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Details - Gig City Data Jam Challenges</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        color: #333;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        width: 80%;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        color: #2c3e50;
+      }
+      .home-button {
+        display: inline-block;
+        margin-bottom: 20px;
+        padding: 10px 20px;
+        background-color: #2980b9;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+      }
+      .home-button:hover {
+        background-color: #1f6391;
+      }
+      .challenge {
+        border-bottom: 1px solid #ddd;
+        padding: 20px 0;
+      }
+      .challenge:last-child {
+        border-bottom: none;
+      }
+      .challenge h2 {
+        color: #2980b9;
+      }
+      .challenge p {
+        margin: 5px 0;
+      }
+      .challenge .status {
+        font-weight: bold;
+        color: #27ae60;
+      }
+      .challenge .pending {
+        color: #e67e22;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <a href="index.html" class="home-button">Home</a>
+      <h1>Gig City Data Jam Challenges</h1>
+
+      <div class="challenge">
+        <p class="status">Status: APPROVED</p>
+        <h2>Neighborhood Association Dashboard</h2>
+        <p>
+          <strong>Challenge Owner:</strong> Perrin Lance, Manager of
+          Neighborhood Services
+        </p>
+        <p>
+          <strong>Impact / Purpose:</strong> This will be helpful with city
+          planning and measuring access to city services.
+        </p>
+        <p>
+          <strong>Possible Data Sources:</strong> U.S. Census Bureau,
+          Neighborhood Association Boundaries, Landscan (from Oak Ridge National
+          Laboratory), High Resolution Population Density Maps
+        </p>
+        <p>
+          <strong>Description:</strong> Calculate and visualize in a dashboard
+          the following statistics for each neighborhood association: total
+          population, median household income, Race/Ethnicity (Hispanic or
+          Latino of any race), %Bachelor's degree or higher, %Language other
+          than English spoken at home, %Foreign born population, %65 years or
+          older, %poverty. Even better, find a way to create a dashboard that
+          automatically syncs and recalculates when a new neighborhood
+          association is added to the Neighborhood Association Boundaries data.
+        </p>
+      </div>
+
+      <div class="challenge">
+        <p class="status">Status: APPROVED</p>
+        <h2>Community Asset Mapping</h2>
+        <p>
+          <strong>Challenge Owner:</strong> Perrin Lance, Manager of
+          Neighborhood Services
+        </p>
+        <p>
+          <strong>Impact / Purpose:</strong> This will be helpful with city
+          planning and measuring access to city services.
+        </p>
+        <p>
+          <strong>Possible Data Sources:</strong> OpenStreetMap, Neighborhood
+          Association Boundaries, Landscan (from Oak Ridge National Laboratory),
+          High Resolution Population Density Maps
+        </p>
+        <p>
+          <strong>Description:</strong> Plot on a map the locations of services
+          essential to a thriving community (like grocery stores, health
+          clinics/hospitals, community centers, financial services, bus stops,
+          water fountains, and pharmacies). Calculate and score the level of
+          access to essential services for each neighborhood association area.
+          Analyze and determine impact of factors on success rates of assets
+          like distance from bus stops. Find a way to create a dashboard that
+          automatically syncs and recalculates when a new neighborhood
+          association is added to the Neighborhood Association Boundaries data.
+        </p>
+      </div>
+
+      <div class="challenge">
+        <p class="status">Status: APPROVED</p>
+        <h2>Text Images to 311</h2>
+        <p>
+          <strong>Challenge Owner:</strong> Tim Moreland (Administrator of
+          Innovation Delivery and Performance)
+        </p>
+        <p>
+          <strong>Impact / Purpose:</strong> Make submitting a 311 request as
+          simple as texting an image to 311
+        </p>
+        <p>
+          <strong>Possible Data Sources:</strong> OPMOD has a zip folder of
+          images and a csv linking those images to service requests
+        </p>
+        <p>
+          <strong>Description:</strong> We are looking for AI and ML
+          practitioners who would like to help create a computer vision product
+          that will be able to characterize images into common 311 service
+          request types. We currently have training and validation data
+          available from images pulled from the 311 system.
+        </p>
+      </div>
+
+      <div class="challenge">
+        <p class="status">Status: APPROVED</p>
+        <h2>311 App for Cyclists</h2>
+        <p>
+          <strong>Challenge Owners:</strong> Tim Moreland, Administrator of
+          Innovation Delivery and Performance; Daniel Dufour, Director of
+          Performance Management and Open Data
+        </p>
+        <p>
+          <strong>Impact / Purpose:</strong> Make reporting issues related to
+          cycling easier (broken glass, blocked bike lane, broken bike repair
+          station) easier, so that the city learns about and fixes these issues,
+          leading to a more pleasant cycling experience
+        </p>
+        <p>
+          <strong>Possible Data Sources:</strong> bicycle-repair-stations:
+          <a
+            href="https://github.com/officeofperformancemanagement/bicycle-repair-stations"
+            >GitHub Repository</a
+          >
+        </p>
+        <p>
+          <strong>Description:</strong> Let’s create a new 311 app tailored to
+          cyclists and the issues they face. Note: If sending an API request
+          doesn’t work. You can also email issues to 311emails@chattanooga.gov,
+          which is checked once a day. Action Items: Need to track down more
+          data sources and API documentation for 311.
+        </p>
+      </div>
+
+      <div class="challenge">
+        <p class="status">Status: APPROVED</p>
+        <h2>Cool Down Map</h2>
+        <p>
+          <strong>Challenge Owners:</strong> Regional Planning Agency (Pending);
+          Office of Community Health (Pending); Daniel Dufour, Director of
+          Performance Management and Open Data (Confirmed); Fire Department
+          (Pending); Park and Outdoors (Pending)
+        </p>
+        <p>
+          <strong>Impact / Purpose:</strong> More easily find a place to cool
+          down during the summer.
+        </p>
+        <p>
+          <strong>Possible Data Sources:</strong> OpenStreetMap (parks, water
+          fountains, buildings); ShadeMap; Community Centers (City Website,
+          Google Map); UTC Tree Canopy Datasets
+        </p>
+        <p>
+          <strong>Resources:</strong> JavaScript Libraries for Creating Web
+          Maps: LeafletJS, MapLibre GL
+        </p>
+      </div>
+
+      <div class="challenge">
+        <p class="status pending">Status: PENDING</p>
+        <h2>Recycling Map</h2>
+        <p><strong>Challenge Owner:</strong> Philip Basti</p>
+        <p>
+          <strong>Impact / Purpose:</strong> Make it easier to know what and
+          where to recycle, leading to more recycling.
+        </p>
+        <p>
+          <strong>Possible Data Sources:</strong> OpenStreetMap, City Website
+        </p>
+      </div>
+
+      <div class="challenge">
+        <p class="status pending">Status: PENDING - Waiting for CARTA Input</p>
+        <h2>Better Bus Map</h2>
+        <p>
+          <strong>Challenge Owner:</strong> Daniel Dufour, Director of
+          Performance Management and Open Data
+        </p>
+        <p>
+          <strong>Impact / Purpose:</strong> Make catching the bus a more
+          pleasant experience, leading to more ridership.
+        </p>
+        <p>
+          <strong>Possible Data Sources:</strong> CARTA Live Bus Tracker, CARTA
+          Google Transit Feed Specification Bus Schedules:
+          <a href="https://www.gocarta.org/about/developers-center/"
+            >CARTA Developers Center</a
+          >; API Endpoint:
+          <a
+            href="http://bustracker.gocarta.org/bustime/map/getBusesForRoute.jsp?route=4"
+            >Get Buses For Route</a
+          >
+        </p>
+        <p>
+          <strong>Description:</strong> The live bus tracker has some
+          limitations and it’s time for a new modern version. It would be great
+          if it had the following features: Works great on any device (Smart
+          Phone, Tablet or Desktop); Remembers favorite bus routes; Animates
+          buses so they don’t look as if they are jumping every time a new
+          location is pinged. This would require some extrapolation and
+          estimation of location based on speed and direction; Loads location
+          based on URL parameters. Action Items: OPMOD needs to follow up with
+          CARTA on this and if they have input on other priorities/challenges.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

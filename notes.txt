@@ -7,3 +7,26 @@ We need to also include some error handling and verification the object is in th
 
 
 3rd party api email validation.
+
+
+---------------------------------------------------------------------------------------------------------
+
+Here's the link to the challenges: https://docs.google.com/document/d/1LSyB7Ep8lAL0uP8EkPu9Qw66Kqb67LU2D1wUazoac_U/edit#heading=h.66tc9q8ezitm
+I'm wondering if you'd like me to store these in Markdown if that makes it easier to convert to HTML?  I only ask because I expect to be making a lot more changes to this list over the next week.
+
+---------------------------------------------------------------------------------------------------------
+You can add opendata@chattanooga.gov as a contact email, but I agree that setting up an hello@gigcitydatajam.com email or something like that would be a good idea.  Maybe we can discuss tonight?   
+
+You can add my phone number: (423) 643-6333
+
+---------------------------------------------------------------------------------------------------------
+Here's a list of topics that we might want to add to the sign up form to gauge interest: "public transit", "equity", "pedestrian safety", "climate", "machine vision", "cycling", "environment", "web development", "cyber security", "data analytics", and "devops". (including some topics that Philip had mentioned earlier).  Happy to add any more topics that you all think should be there!
+
+---------------------------------------------------------------------------------------------------------
+ parking is behind the Bessie Smith Cultural Center, a fairly well-known landmark in town.
+
+---------------------------------------------------------------------------------------------------------
+Could we add some contact information for potential sponsors?  Maybe just a link on the main page that says "Become a sponsor"  and links to DataJam@symfu.com.
+
+---------------------------------------------------------------------------------------------------------
+
