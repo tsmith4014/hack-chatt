@@ -4,38 +4,93 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hackathon Signup</title>
-    <link rel="stylesheet" href="styles.css" />
     <link
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
       rel="stylesheet"
     />
+    <style>
+      .footer p {
+        margin: 1px 0; /* Adjust the margin as needed */
+      }
+    </style>
   </head>
-  <body>
-    <!-- <div class="navbar">
-      <img
-        src="assets/side_by_side_logo.png"
-        alt="C.D. Tech Logo"
-        class="cdtech-logo"
-      />
-    </div> -->
-
-    <div class="container">
-      <div class="header text-left p-4 rounded mb-3">
-        <div class="title-box">
+  <body
+    style="
+      font-family: Arial, sans-serif;
+      background-image: url('assets/abstract_chattskyline.jpg');
+      background-size: cover;
+      background-position: center;
+      margin: 0;
+      padding: 0;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    "
+  >
+    <div
+      class="container"
+      style="
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 0px;
+        max-width: 1200px;
+        padding-left: 20px;
+      "
+    >
+      <div
+        class="header text-left p-4 rounded mb-3"
+        style="
+          background-color: rgba(0, 0, 68, 0.8);
+          padding: 20px;
+          border-radius: 10px;
+          margin-bottom: 20px;
+          width: 100%;
+          max-width: 715px;
+          display: flex;
+          justify-content: space-between;
+          flex-wrap: wrap;
+        "
+      >
+        <div class="title-box" style="flex: 1; min-width: 200px">
           <h2>GET READY FOR THE INAUGURAL</h2>
-          <h1 class="highlight-text">
+          <h1 class="highlight-text" style="color: rgba(255, 87, 34, 1)">
             Gig City <br />
             Data Jam!
           </h1>
         </div>
-        <div class="date-location-box">
+        <div
+          class="date-location-box"
+          style="
+            flex: 1;
+            text-align: right;
+            background-color: rgba(0, 0, 68, 0.8);
+            padding: 10px;
+            border-radius: 10px;
+            min-width: 200px;
+          "
+        >
           <h3>July 27, 9am - 6pm</h3>
           <h3>Hosted at the Edney Building - 5th Floor</h3>
           <h3>Chattanooga, TN</h3>
         </div>
       </div>
 
-      <div class="info-box">
+      <div
+        class="info-box"
+        style="
+          padding: 20px;
+          border-radius: 10px;
+          margin-bottom: 20px;
+          width: 100%;
+          max-width: 715px;
+          background-color: rgba(0, 0, 68, 0.8);
+          color: #ffffff;
+        "
+      >
         <p>
           Presented by <strong>Chattanooga’s</strong>, tech networking and
           mentorship community, this is a hackathon for coders of all kinds.
@@ -59,13 +114,43 @@
         </p>
       </div>
 
-      <div class="signup-section">
-        <div class="signup-info highlight-text">
+      <div
+        class="signup-section"
+        style="
+          display: flex;
+          align-items: center;
+          margin-top: 20px;
+          flex-wrap: wrap;
+        "
+      >
+        <div
+          class="signup-info highlight-text"
+          style="
+            margin-left: 20px;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: rgba(0, 0, 68, 0.8);
+            color: rgba(255, 87, 34, 1);
+            text-align: center;
+          "
+        >
           <h3>Don't Miss Out!</h3>
           <p>Register now to save your spot!!</p>
         </div>
-        <div class="signup-form-container">
-          <form id="emailForm" class="signup-form text-white p-4 rounded mb-3">
+        <div
+          class="signup-form-container"
+          style="
+            padding: 20px;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 400px;
+          "
+        >
+          <form
+            id="emailForm"
+            class="signup-form text-white p-4 rounded mb-3"
+            style="background-color: rgba(0, 0, 68, 0.8); color: #ffffff"
+          >
             <input
               type="email"
               id="email"
@@ -74,26 +159,51 @@
               required
               placeholder="your@email.here"
             />
-            <button type="submit" class="btn btn-warning w-100 highlight-text">
+            <button
+              type="submit"
+              class="btn btn-warning w-100 highlight-text"
+              style="color: rgba(255, 87, 34, 1)"
+            >
               Register
             </button>
-            <div class="privacy-policy text-white mt-2">
+            <div
+              class="privacy-policy text-white mt-2"
+              style="margin-top: 20px"
+            >
               <p>
                 By registering for this event, you agree to our
-                <a href="privacy-policy.html">Privacy Policy</a>.
+                <a
+                  href="privacy-policy.html"
+                  style="color: #ffcc00; text-decoration: underline"
+                  >Privacy Policy</a
+                >.
               </p>
             </div>
           </form>
         </div>
       </div>
     </div>
-    <footer class="text-white text-center p-3">
+    <footer
+      class="footer text-white text-center p-3"
+      style="
+        background: rgba(0, 0, 0, 0.7);
+        padding: 10px;
+        width: 100%;
+        text-align: center;
+        margin: 1px 0;
+      "
+    >
       <p>
         © 2024 All rights reserved. No part of this content may be reproduced
         without permission.
       </p>
       <p>
-        Website created by
+        <a href="sponsor-us.html">Sponsor Us</a> |
+        <a href="event-details.html">Event Details</a> |
+        <a href="contact-us.html">Contact us</a>
+      </p>
+      <p>
+        Website created by:
         <a
           href="https://www.linkedin.com/in/chad-thompson-smith/"
           target="_blank"
