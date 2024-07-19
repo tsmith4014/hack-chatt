@@ -1,6 +1,6 @@
 # Hackathon Signup Website
 
-This project sets up a hackathon signup website using AWS services. Users can enter their email addresses, which are then processed by an AWS Lambda function, that sits behind an API Gateway, and stored in an secure S3 bucket. The frontend is hosted on an public S3 as a static website.
+This project sets up a hackathon signup website using AWS services. Users can enter their email addresses, which are then processed by an AWS Lambda function, that sits behind an API Gateway, and stored in an secure S3 bucket. The frontend is hosted on an public S3 as a static website. Site is live at: https://chattanooga-hackathon-2024.devopschad.com/
 
 ![Hackathon Signup Serverless Architecture](assets/hackathon_signup_serverless_architecture.png)
 
