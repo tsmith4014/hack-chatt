@@ -28,3 +28,11 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_DEFAULT_REGION: us-east-1
+
+      - name: Set dynamic environment variable
+        run: echo "MY_VAR=some_value" >> $GITHUB_ENV
+
+      - name: Use dynamic environment variable
+        run: echo "The value of MY_VAR is $MY_VAR"
+        env:
+          MY_VAR: ${{ env.MY_VAR }}
